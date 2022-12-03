@@ -1,5 +1,6 @@
 <?php
 include "db_conn.php";
+session_start();
 
 if(isset($_POST['login']) && isset($_POST['password'])){
     function validate ($data){
@@ -22,8 +23,23 @@ if(isset($_POST['login']) && isset($_POST['password'])){
     else{ #tu potem mogę rozbić na adminów, pracowników i userów
         $sql = "SELECT * FROM users WHERE login='$login' AND password='$pass'";
         $result = mysqli_query($conn, $sql);
-        if(mysqli_num_rows($result)){
-            echo "Hello.";
+        if(mysqli_num_rows($result) === 1){
+            $row=mysqli_fetch_assoc($result);
+            if($row['login'] == $login && $row['password'] == $pass){
+                $_SESSION['login']=$row['login'];
+                $_SESSION['id_users']=$row['ID_users'];
+                echo "test";
+                header("Location: user.php");
+                exit();
+            }
+            else{
+                header("Location: index.php?error=Zły login lub hasło");
+                exit(); 
+            }
+        }
+        else{
+            header("Location: index.php?error=Zły login lub hasło");
+            exit();
         }
     }
 
@@ -32,4 +48,4 @@ else{
     header("Location: index.php?error");
     exit();
 }
-// Zakończyłem na 15 minucie
+// Mikołaj Tchorz
