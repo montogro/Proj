@@ -1,4 +1,5 @@
 <?php
+include "db_conn.php";
 
 if(isset($_POST['login']) && isset($_POST['password'])){
     function validate ($data){
@@ -11,15 +12,19 @@ if(isset($_POST['login']) && isset($_POST['password'])){
     $pass = validate($_POST['password']);
 
     if(empty($login)){
-        header("Location: index.php?error=Wymagany jest login");
+        header("Location: index.php?error=Wymagany jest login - podaj go");
         exit();
     }
     else if(empty($pass)){
-        header("Location: index.php?error=Wymagane jest hasło");
+        header("Location: index.php?error=Wymagane jest hasło - podaj je");
         exit();
     }
-    else{
-        echo "Valid input";
+    else{ #tu potem mogę rozbić na adminów, pracowników i userów
+        $sql = "SELECT * FROM users WHERE login='$login' AND password='$pass'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result)){
+            echo "Hello.";
+        }
     }
 
 }
