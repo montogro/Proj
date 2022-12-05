@@ -22,7 +22,7 @@
             <?php 
             
                 echo '<table id="table_requests"> 
-                <tr> 
+                <tr>
                     <th> <font face="Arial">Data zgłoszenia</font> </th> 
                     <th> <font face="Arial">Klient</font> </th> 
                     <th> <font face="Arial">Temat zgłoszenia</font> </th>
