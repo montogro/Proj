@@ -6,16 +6,16 @@
 <!DOCTYPE html5>
 <html>
 <head>
-    <title><?php echo $_SESSION['login']; ?> - panel</title>
+    <title><?php echo $_SESSION['login']; ?> - panel pracownika</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="block">
         <h1>Witaj pracowniku, <?php echo $_SESSION['login']; ?>!</h1>
         <div class="text_1">Wybierz co chcesz zrobić:</div>
-        <a id="menu" href="add_request.php">Dodaj zgłoszenie</a>
-        <a id="menu" href="my_requests.php">Moje zgłoszenia</a>
-        <a id="menu" href="explo.php">Elementy eksploatacyjne</a>
+        <a id="menu" href="check_request.php">Szukaj zgłoszenia pod nazwą klienta</a>
+        <a id="menu" href="my_requests.php">Podejrzyj wszystkie zgłoszenia</a>
+        <a id="menu" href="add_employee.php">Dodaj nowego pracownika</a>
         <a id="menu" href="logout.php">Wyloguj się</a>
     </div>
 </body>

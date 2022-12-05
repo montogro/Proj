@@ -74,10 +74,21 @@ textarea{
     border-radius: 5px;
 }
 
-label{
+#user_form_label{
     color: #888;
     font-size: 18px;
     padding: 10px;
+}
+
+#radio_form_label{
+    margin-right: 15px;
+    line-height: 32px;
+}
+
+.radio{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
 }
 
 button{
@@ -106,6 +117,21 @@ button:hover{
 }
 
 #login:hover{
+    opacity: .8;
+}
+
+#register{
+    float: right;
+    background: #555;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+    text-decoration: none;
+}
+
+#register:hover{
     opacity: .8;
 }
 
