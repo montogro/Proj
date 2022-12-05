@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="block">
+    <div class="block_request">
         <a id="centered_ahref" href="employee.php">Powrót na stronę</a>
         <h1>Szukaj po nazwie klienta</h1>
         <form id="search_form" action="check_request.php" method="POST">
@@ -25,9 +25,10 @@
                 if(isset($_REQUEST['client'])){
                 echo '<table id="table_requests"> 
                 <tr> 
+                    <th> <font face="Arial">Data zgłoszenia</font> </th> 
                     <th> <font face="Arial">Klient</font> </th> 
-                    <th> <font face="Arial">Temat</font> </th>
-                    <th> <font face="Arial">Treść</font> </th> 
+                    <th> <font face="Arial">Temat zgłoszenia</font> </th>
+                    <th> <font face="Arial">Opis problemu przez klienta</font> </th> 
                     <th> <font face="Arial">Odpowiedź pracownika</font> </th> 
                     <th> <font face="Arial">Status zgłoszenia</font> </th> 
                 </tr>';
@@ -35,18 +36,20 @@
                 $result = mysqli_query($conn, $sql);
                 //if($result = $conn->query($sql)){
                 while ($row = $result->fetch_assoc()) {
-                    $field1name = $row["client"];
-                    $field2name = $row["subject"];
-                    $field3name = $row["description"];
-                    $field4name = $row["response"];
-                    $field5name = $row["status"]; 
+                    $field1name = $row["date"];
+                    $field2name = $row["client"];
+                    $field3name = $row["subject"];
+                    $field4name = $row["description"];
+                    $field5name = $row["response"];
+                    $field6name = $row["status"]; 
 
                     echo '<tr> 
-                            <td>'.$field1name.'</td> 
-                            <td>'.$field2name.'</td>
-                            <td>'.$field3name.'</td> 
+                            <td>'.$field1name.'</td>
+                            <td>'.$field2name.'</td> 
+                            <td>'.$field3name.'</td>
                             <td>'.$field4name.'</td> 
                             <td>'.$field5name.'</td> 
+                            <td>'.$field6name.'</td> 
                         </tr>';
                     //echo $row['client']."<br>";
                 }

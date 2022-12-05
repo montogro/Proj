@@ -23,7 +23,7 @@ if(isset($_POST['login']) && isset($_POST['password']) && (($radio=="yes")||($ra
         exit();
     }
     else if(empty($radio)){
-        header("Location: index.php?error=Zaznacz radio button");
+        header("Location: index.php?error=Wymagane jest zaznaczenie pola wyboru - zaznacz jędną z opcji");
         exit();
     }
     else{ #tu potem mogę rozbić na pracowników i userów
