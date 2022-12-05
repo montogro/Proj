@@ -10,7 +10,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <form action="send.php" method="POST">
+    <form id="request_form" action="send.php" method="POST">
+        <a id="centered_ahref" href="user.php">Powrót na stronę</a>
         <h2>Formularz zgłoszeniowy</h2>
         <?php if (isset($_GET['error'])) { ?>
             <p class="error"><?php echo $_GET['error']; ?></p>

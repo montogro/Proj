@@ -20,7 +20,7 @@ if(isset($_POST['login']) && isset($_POST['password'])){
         header("Location: index.php?error=Wymagane jest hasło - podaj je");
         exit();
     }
-    else{ #tu potem mogę rozbić na adminów, pracowników i userów
+    else{ #tu potem mogę rozbić na pracowników i userów
         $sql = "SELECT * FROM users WHERE login='$login' AND password='$pass'";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) === 1){
