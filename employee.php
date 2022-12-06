@@ -15,7 +15,8 @@
         <div class="text_1">Wybierz co chcesz zrobić:</div>
         <a id="menu" href="check_request.php">Szukaj zgłoszenia pod nazwą klienta</a>
         <a id="menu" href="all_requests.php">Podejrzyj wszystkie zgłoszenia</a>
-        <a id="menu" href="add_employee.php">Dodaj nowego pracownika</a>
+        <a id="menu" href="add_client.php">Dodaj nowego klienta</a>
+        <a id="menu" href="change_pass_employee.php">Zmień hasło</a>
         <a id="menu" href="logout.php">Wyloguj się</a>
     </div>
 </body>
