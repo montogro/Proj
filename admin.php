@@ -14,7 +14,6 @@
         <h1>Panel administratora</h1>
         <div class="text_1">Wybierz co chcesz zrobić:</div>
         <a id="menu" href="employee_management.php">Dodaj lub usuń pracownika</a>
-        <a id="menu" href="delete_request.php">Usuń zgłoszenie</a>
         <a id="menu" href="logout.php">Wyloguj się</a>
     </div>
 </body>
