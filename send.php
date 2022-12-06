@@ -26,7 +26,7 @@ if(isset($_SESSION['id_users']) && isset($_SESSION['login'])){
             exit(); #tu są jakieś bugi jeszcze
         }
         else{
-            $sql = "INSERT INTO `requests` (`id_request`, `client`, `subject`, `description`, `status`) VALUES (NULL, '".$_SESSION['login']."', '".$_POST['subject']."', '".$_POST['description']."', 'otwarte');";
+            $sql = "INSERT INTO `requests` (`id_request`, `client`, `subject`, `description`, `status`) VALUES (NULL, '".$_SESSION['login']."', '".$_POST['subject']."', '".$_POST['description']."', 'nowe');";
             $result = mysqli_query($conn, $sql);
             header("Location: add_request.php?fine=Zgłoszenie zostało wysłane!");
             exit();

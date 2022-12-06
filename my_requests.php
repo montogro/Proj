@@ -27,7 +27,7 @@
                     <th> <font face="Arial">Status zgłoszenia</font> </th> 
                 </tr>';
 
-                $sql = "SELECT * FROM requests WHERE client LIKE '".$_SESSION['login']."';";
+                $sql = "SELECT * FROM requests WHERE client LIKE '".$_SESSION['login']."' ORDER BY date DESC;";
                 $result = mysqli_query($conn, $sql);
                 //if($result = $conn->query($sql)){
                 while ($row = $result->fetch_assoc()) {

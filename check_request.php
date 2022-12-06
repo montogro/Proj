@@ -33,7 +33,7 @@
                     <th> <font face="Arial">Status zgłoszenia</font> </th> 
                     <th> <font face="Arial"></font> </th> 
                 </tr>';
-                $sql = "SELECT * FROM requests WHERE client LIKE '".$_POST['client']."';";
+                $sql = "SELECT * FROM requests WHERE client LIKE '".$_POST['client']."' ORDER BY date DESC;";
                 $result = mysqli_query($conn, $sql);
                 //if($result = $conn->query($sql)){
                 while ($row = $result->fetch_assoc()) {
@@ -54,7 +54,7 @@
                         <td>'.$field4name.'</td> 
                         <td>'.$field5name.'</td> 
                         <td>'.$field6name.'</td> 
-                        <td>.<button type="submit">Modyfikuj odpowiedź</button></td> 
+                        <td>.<button type="submit">Zmień status lub odpowiedz</button></td> 
                     </tr>';
                 //echo $row['client']."<br>";
                 ?></form><?php
