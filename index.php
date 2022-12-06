@@ -19,14 +19,17 @@
         <br>
         
         <fieldset>
-        <legend>Jesteś pracownikiem naszego serwisu?</legend>
+        <legend>Typ użytkownika</legend>
         
         <div class="radio">
-            <input type="radio" id="pickedChoice1" name="radio" value="yes" />
-            <label id="radio_form_label" for="pickedChoice1">Tak</label>
+            <input type="radio" id="pickedChoice0" name="radio" value="administrator" />
+            <label id="radio_form_label" for="pickedChoice0">Administrator</label>
 
-            <input type="radio" id="pickedChoice2" name="radio" value="no" />
-            <label id="radio_form_label" for="pickedChoice2">Nie</label>
+            <input type="radio" id="pickedChoice1" name="radio" value="pracownik" />
+            <label id="radio_form_label" for="pickedChoice1">Pracownik</label>
+
+            <input type="radio" id="pickedChoice2" name="radio" value="klient" />
+            <label id="radio_form_label" for="pickedChoice2">Klient</label>
         </div>
 
         </fieldset>

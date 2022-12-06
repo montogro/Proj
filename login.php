@@ -3,7 +3,7 @@ include "db_conn.php";
 session_start();
 
 $radio=$_POST['radio'];
-if(isset($_POST['login']) && isset($_POST['password']) && (($radio=="yes")||($radio=="no"))){
+if(isset($_POST['login']) && isset($_POST['password']) && (($radio=="pracownik")||($radio=="klient")||($radio=="administrator"))){
     function validate ($data){
         $data=trim($data);
         $data=stripslashes($data);
@@ -27,7 +27,7 @@ if(isset($_POST['login']) && isset($_POST['password']) && (($radio=="yes")||($ra
         exit();
     }
     else{ #tu potem mogę rozbić na pracowników i userów
-        if ($radio=="no"){ #user
+        if ($radio=="klient"){ #user
             $sql = "SELECT * FROM users WHERE login='$login' AND password='$pass'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) === 1){
@@ -44,7 +44,7 @@ if(isset($_POST['login']) && isset($_POST['password']) && (($radio=="yes")||($ra
                 }
             }
         }
-        if ($radio=="yes"){ #pracownik
+        if ($radio=="pracownik"){ #pracownik
             $sql = "SELECT * FROM employees WHERE login='$login' AND password='$pass'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) === 1){
@@ -53,6 +53,23 @@ if(isset($_POST['login']) && isset($_POST['password']) && (($radio=="yes")||($ra
                     $_SESSION['login']=$row['login'];
                     $_SESSION['id_employee']=$row['ID_employees'];
                     header("Location: employee.php");
+                    exit();
+                }
+                else{
+                    header("Location: index.php?error=Zły login lub hasło");
+                    exit(); 
+                }
+            }
+        }
+        if ($radio=="administrator"){ #administrator
+            $sql = "SELECT * FROM admins WHERE login='$login' AND password='$pass'";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) === 1){
+                $row=mysqli_fetch_assoc($result);
+                if($row['login'] == $login && $row['password'] == $pass){
+                    $_SESSION['login']=$row['login'];
+                    $_SESSION['id_admin']=$row['ID_admins'];
+                    header("Location: admin.php");
                     exit();
                 }
                 else{
