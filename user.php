@@ -15,7 +15,8 @@
         <div class="text_1">Wybierz co chcesz zrobić:</div>
         <a id="menu" href="add_request.php">Dodaj zgłoszenie</a>
         <a id="menu" href="my_requests.php">Moje zgłoszenia</a>
-        <a id="menu" href="explo.php">Filmy instruktażowe</a>
+        <a id="menu" href="my_info.php">Moje dane</a>
+        <a id="menu" href="tutorials.php">Filmy instruktażowe</a>
         <a id="menu" href="change_pass.php">Zmień hasło</a>
         <a id="menu" href="logout.php">Wyloguj się</a>
     </div>
