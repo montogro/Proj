@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="block_request">
-        <a id="centered_ahref" href="user.php">Powrót na stronę</a>
+        <a id="centered_return" href="user.php">Powrót na stronę</a>
         <h1>Historia zgłoszeń przypisanych do Twojego konta</h1>
         <p class="requests">
             <?php 

@@ -37,7 +37,7 @@ include "db_conn.php";
 <body>
     <div class="block">
     <form id="search_form" action="register.php" method="POST">
-        <a id="centered_ahref" href="employee.php">Powrót na stronę</a>
+        <a id="centered_return" href="employee.php">Powrót na stronę</a>
         <h2>Rejestracja klienta</h2>
         <?php if (isset($_GET['error'])) { ?>
             <p class="error"><?php echo $_GET['error']; ?></p>

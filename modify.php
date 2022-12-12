@@ -13,17 +13,18 @@
 </head>
 <body>
 <div class="block_request">
-        <a id="centered_ahref" href="all_requests.php">Powrót na stronę</a>
+        <a id="centered_return" href="all_requests.php">Powrót na stronę</a>
         <h1>Zaktualizuj status lub odpowiedz na zgłoszenie o identyfikatorze: <?php echo $_POST['id_element']; ?> </h1>
         <form id="search_form" action="modify.php" method="POST">
             <input type="hidden" name="id_element" value="<?php echo $_POST['id_element']; ?>">
-            <button id="modyfikuj" type="submit" name="accept">Przyjmij zgłoszenie</button>
+            <button id="accept" type="submit" name="accept">Przyjmij to zgłoszenie do realizacji</button>
         </form>
         <form id="search_form" action="modify.php" method="POST">
+                <br><label>Odpowiedź do Klienta</label>
                 <input type="hidden" name="id_element" value="<?php echo $_POST['id_element']; ?>">
-                <textarea name="response" placeholder="Wpisz odpowiedź dla Klienta"></textarea>
+                <textarea name="response"></textarea>
                 <br>
-                <button id="modyfikuj" type="submit">Odpowiedz</button>
+                <button id="respond" type="submit">Odpowiedz i zamknij zgłoszenie</button>
         </form>
             <?php
                 if(isset($_POST['accept'])){
@@ -38,7 +39,6 @@
                     header("Location: all_requests.php?fine=Pomyślnie wysłano odpowiedź do Klienta");
                     exit();
                 }
-
             ?>
     </div>
 </body>

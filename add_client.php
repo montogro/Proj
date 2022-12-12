@@ -41,30 +41,30 @@
 <!DOCTYPE html5>
 <html>
 <head>
-    <title><?php echo $_SESSION['login']; ?> - dodaj nowego klienta</title>
+    <title><?php echo $_SESSION['login']; ?> - dodaj nowego Klienta</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="block">
-        <a id="centered_ahref" href="employee.php">Powrót na stronę</a>
+        <a id="centered_return" href="employee.php">Powrót na stronę</a>
         <form id="search_form" action="add_client.php" method="POST">
-            <h2>Dodawanie klienta do bazy danych</h2>
+            <h2>Dodawanie Klienta do bazy danych</h2>
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
             <?php if (isset($_GET['fine'])) { ?>
                 <p class="fine"><?php echo $_GET['fine']; ?></p>
              <?php } ?>
-            <label id="user_form_label">Login klienta*</label>
-            <input type="text" name="login_client" placeholder="Podaj login dla klienta">
+            <label id="user_form_label">Login Klienta*</label>
+            <input type="text" name="login_client" placeholder="Podaj login dla Klienta">
             <br>
 
-            <label id="user_form_label">Hasło klienta*</label>
-            <input type="password" name="password_client" placeholder="Podaj hasło dla klienta">
+            <label id="user_form_label">Hasło Klienta*</label>
+            <input type="password" name="password_client" placeholder="Podaj hasło dla Klienta">
             <br>
 
-            <label id="user_form_label">Maszyna klienta*</label>
-            <input type="text" name="vehicle_client" placeholder="Podaj pojazd jaki posiada klient">
+            <label id="user_form_label">Maszyna Klienta*</label>
+            <input type="text" name="vehicle_client" placeholder="Podaj pojazd jaki posiada Klient">
             <br>
             
             <button id="login" type="submit">Dodaj użytkownika</button>

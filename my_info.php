@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="block_request">
-        <a id="centered_ahref" href="user.php">Powrót na stronę</a>
+        <a id="centered_return" href="user.php">Powrót na stronę</a>
         <h1>Informacje o Kliencie</h1>
         <p class="requests">
         <a id="centered_ahref" href="export_csv.php">Pobierz w rozszerzeniu CSV</a>

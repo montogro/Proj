@@ -48,7 +48,7 @@
 </head>
 <body>
     <div class="block">
-        <a id="centered_ahref" href="user.php">Powrót na stronę</a>
+        <a id="centered_return" href="user.php">Powrót na stronę</a>
         <form id="search_form" action="change_pass.php" method="POST">
             <h2>Zmiana hasła</h2>
             <?php if (isset($_GET['error'])) { ?>

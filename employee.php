@@ -11,11 +11,11 @@
 </head>
 <body>
     <div class="block">
-        <h1>Witaj pracowniku, <?php echo $_SESSION['login']; ?>!</h1>
+        <h1>Witaj, <?php echo $_SESSION['login']; ?>!</h1>
         <div class="text_1">Wybierz co chcesz zrobić:</div>
-        <a id="menu" href="check_request.php">Szukaj zgłoszenia pod nazwą klienta</a>
+        <a id="menu" href="check_request.php">Szukaj zgłoszenia pod loginem Klienta</a>
         <a id="menu" href="all_requests.php">Podejrzyj wszystkie zgłoszenia</a>
-        <a id="menu" href="add_client.php">Dodaj nowego klienta</a>
+        <a id="menu" href="add_client.php">Dodaj nowego Klienta</a>
         <a id="menu" href="change_pass_employee.php">Zmień hasło</a>
         <a id="menu" href="logout.php">Wyloguj się</a>
     </div>

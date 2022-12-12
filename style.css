@@ -39,6 +39,10 @@ body{
     background: #fff;
     border-radius: 15px;
     flex-direction: column;
+    position: relative; 
+    height: 700px;
+    overflow:scroll;
+    overflow-x:hidden;
 }
 
 .block{
@@ -114,7 +118,7 @@ textarea{
     border: 2px solid #ccc;
     padding: 10px;
     width: 95%;
-    height: 150px;
+    min-height: 300px;
     margin: 10px auto;
     border-radius: 5px;
 }
@@ -197,6 +201,27 @@ button:hover{
     opacity: .8;
 }
 
+#return{
+    background: rgb(173, 0, 0);
+}
+#return:hover{
+    opacity: .8;
+}
+
+#accept{
+    background: rgb(0, 129, 0);
+}
+#accept:hover{
+    opacity: .8;
+}
+
+#respond{
+    background: rgb(0, 129, 0);
+}
+#respond:hover{
+    opacity: .8;
+}
+
 #centered_ahref{
     text-align: center;
     background: #555;
@@ -212,6 +237,24 @@ button:hover{
 }
 
 #centered_ahref:hover{
+    opacity: .8;
+}
+
+#centered_return{
+    text-align: center;
+    background: #d89400;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+}
+
+#centered_return:hover{
     opacity: .8;
 }
 
@@ -267,7 +310,7 @@ button:hover{
   #table_requests td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: justify;
+
     text-justify: inter-word;
   }
   

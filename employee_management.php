@@ -38,7 +38,7 @@
 </head>
 <body>
     <div class="block_user_management">
-        <a id="centered_ahref" href="admin.php">Powrót na stronę</a>
+        <a id="centered_return" href="admin.php">Powrót na stronę</a>
         <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
         <?php } ?>
