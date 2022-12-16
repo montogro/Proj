@@ -31,6 +31,19 @@ body{
     flex-direction: column;
 }
 
+#client_modify_form{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+}
+
+#client_modify_form2{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
 #request_form{
     display: flex;
     width: 700px;
@@ -113,6 +126,28 @@ input{
     border-radius: 5px;
 }
 
+#date2{
+    display: block;
+    border: 2px solid #ccc;
+    width: 75%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+#modify_text{
+    display: block;
+    border: 2px solid #ccc;
+    width: 75%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.label_space{
+    width: 100%;
+}
+
 textarea{
     display: block;
     border: 2px solid #ccc;
@@ -169,6 +204,35 @@ button:hover{
 }
 
 #login:hover{
+    opacity: .8;
+}
+
+#delete_button{
+    float: right;
+    background: #b62a28;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+#delete_button:hover{
+    opacity: .8;
+}
+
+#modify_button{
+    display: block;
+    background: #555;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+    width: 20%;
+}
+
+#modify_button:hover{
     opacity: .8;
 }
 

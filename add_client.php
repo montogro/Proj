@@ -13,6 +13,7 @@
             $login_client = validate($_POST['login_client']);
             $password_client = validate($_POST['password_client']);
             $vehicle_client = validate($_POST['vehicle_client']);
+            $warranty_client = validate($_POST['warranty_client']);
             if(empty($login_client)){
                 header("Location: add_client.php?error=Wymagany jest login Klienta - podaj go");
                 exit();
@@ -26,7 +27,7 @@
                 exit();
             }
             else{
-                $sql = "INSERT INTO `users` (`ID_users`, `login`, `password`, `vehicle`) VALUES (NULL, '".$login_client."', '".$password_client."', '".$vehicle_client."');";
+                $sql = "INSERT INTO `users` (`ID_users`, `login`, `password`, `vehicle`, `warranty_expires`) VALUES (NULL, '".$login_client."', '".$password_client."', '".$vehicle_client."', '".$warranty_client."');";
                 $result = mysqli_query($conn, $sql);
                 header("Location: add_client.php?fine=Klient został dodany!");
                 exit();
@@ -66,8 +67,11 @@
             <label id="user_form_label">Maszyna Klienta*</label>
             <input type="text" name="vehicle_client" placeholder="Podaj pojazd jaki posiada Klient">
             <br>
+
+            <label id="user_form_label">Data wygaśnięcia gwarancji*</label>
+            <input type="date" id="start" name="warranty_client" value="<?php echo date('Y-m-d');?>" min="2015-01-01">
             
-            <button id="login" type="submit">Dodaj użytkownika</button>
+            <button id="login" type="submit">Dodaj Klienta</button>
         </form>  
     </div>
 </body>

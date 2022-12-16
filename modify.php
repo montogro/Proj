@@ -17,7 +17,7 @@
         <h1>Zaktualizuj status lub odpowiedz na zgłoszenie o identyfikatorze: <?php echo $_POST['id_element']; ?> </h1>
         <form id="search_form" action="modify.php" method="POST">
             <input type="hidden" name="id_element" value="<?php echo $_POST['id_element']; ?>">
-            <button id="accept" type="submit" name="accept">Przyjmij to zgłoszenie do realizacji</button>
+            <button id="accept" type="submit" name="accept">Przyjmij zgłoszenie do realizacji</button>
         </form>
         <form id="search_form" action="modify.php" method="POST">
                 <br><label>Odpowiedź do Klienta</label>

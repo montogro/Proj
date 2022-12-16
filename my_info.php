@@ -26,16 +26,27 @@
                 //if($result = $conn->query($sql)){
                 while ($row = $result->fetch_assoc()) {
                     $field1name = $row["login"];
-                    $field2name = $row["vehicle"];
+                    $field2name = $row["name"];
+                    $field3name = $row["surname"];
+                    $field4name = $row["vehicle"];
+                    $field5name = $row["warranty_expires"];
 
                     echo '
                     <tr> 
                         <th> <font face="Arial">Twój login</font> </th> 
                         <td>'.$field1name.'</td>
                     </tr>
+                    <tr> 
+                        <th> <font face="Arial">Imię i nazwisko</font> </th> 
+                        <td>'.$field2name.' '.$field3name.'</td>
+                    </tr>
                     <tr>
                         <th> <font face="Arial">Twój przypisany pojazd</font> </th>
-                        <td>'.$field2name.'</td> 
+                        <td>'.$field4name.'</td> 
+                    </tr>
+                    <tr>
+                        <th> <font face="Arial">Gwarancja wygaśnie</font> </th>
+                        <td>'.$field5name.'</td> 
                     </tr>
                     ';
                     //echo $row['client']."<br>";
