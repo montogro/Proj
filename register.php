@@ -10,6 +10,8 @@ include "db_conn.php";
         }
         $login = validate($_POST['login']);
         $password = validate($_POST['password']);
+        $name = validate($_POST['name']);
+        $surname = validate($_POST['surname']);
         if(empty($login)){
             header("Location: register.php?error=Wymagany jest login - podaj go");
             exit();
@@ -18,8 +20,16 @@ include "db_conn.php";
             header("Location: register.php?error=Wymagane jest hasło - podaj je");
             exit();
         }
+        else if(empty($name)){
+            header("Location: register.php?error=Wymagane jest Twoje imię - podaj je");
+            exit();
+        }
+        else if(empty($surname)){
+            header("Location: register.php?error=Wymagane jest Twoje nazwisko - podaj je");
+            exit();
+        }
         else{
-            $sql = "INSERT INTO `users` (`ID_users`, `login`, `password`) VALUES (NULL, '".$login."', '".$password."');";
+            $sql = "INSERT INTO `users` (`ID_users`, `login`, `password`, `name`, `surname`) VALUES (NULL, '".$login."', '".$password."', '".$name."', '".$surname."');";
             $result = mysqli_query($conn, $sql);
             header("Location: register.php?fine=Zostałeś zarejestrowany! Wróć do strony głównej i zaloguj się");
             exit();
@@ -35,7 +45,7 @@ include "db_conn.php";
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="block">
+    <div class="block_user_management">
     <form id="search_form" action="register.php" method="POST">
         <a id="centered_return" href="employee.php">Powrót na stronę</a>
         <h2>Rejestracja klienta</h2>
@@ -47,6 +57,14 @@ include "db_conn.php";
         <?php } ?>
         <label id="user_form_label">Nazwa użytkownika*</label>
         <input type="text" name="login" placeholder="Podaj nowy login">
+        <br>
+
+        <label id="user_form_label">Imię*</label>
+        <input type="text" name="name" placeholder="Podaj imię">
+        <br>
+
+        <label id="user_form_label">Nazwisko*</label>
+        <input type="text" name="surname" placeholder="Podaj nazwisko">
         <br>
 
         <label id="user_form_label">Hasło*</label>

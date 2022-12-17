@@ -20,20 +20,20 @@
             <p class="fine"><?php echo $_GET['fine']; ?></p>
         <?php } ?>
 
-        <label>Data zakupu maszyny [DD.MM.RRRR]*</label>
-        <input type="text" name="purchase_date" placeholder="Podaj datę zakupu swojej maszyny .. ">
+        <label id="user_form_label">Data zakupu maszyny*</label>
+        <input type="date" id="start" name="purchase_date" value="<?php echo date('Y-m-d');?>" min="2010-01-01" max="2099-12-31">
         <br>
 
         <label>Właściciel pojazdu / firma*</label>
         <input type="text" name="owner_company" placeholder="Podaj właściciela pojazdu lub firmę .. ">
         <br>
 
-        <label>Data gwarancji [DD.MM.RRRR]*</label>
-        <input type="text" name="warranty_date" placeholder="Podaj datę wydania gwarancji pojazdu .. ">
-        <br>
-
         <label>Numer gwarancji*</label>
         <input type="text" name="warranty_number" placeholder="Podaj numer gwarancji .. ">
+        <br>
+
+        <label id="user_form_label">Data wygaśnięcia gwarancji*</label>
+        <input type="date" id="start" name="warranty_date" value="<?php echo date('Y-m-d');?>" min="2010-01-01" max="2099-12-31">
         <br>
 
         <label>Lokalizacja*</label>

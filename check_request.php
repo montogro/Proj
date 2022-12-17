@@ -63,7 +63,7 @@
                         <td>'.$field2name.'</td> 
                         <td>'.$field3name.'</td>
                         <td>'.$field4name.'</td>
-                        <td><li>Data zakupu maszyny: '.$info1.'</li><br><li>właściciel / firma: '.$info2.'</li><br><li>data gwarancji: '.$info3.'</li><br><li>numer gwarancji: '.$info4.'</li><br><li>lokalizacja: '.$info5.'</li><br><li>nr tel.: '.$info6.'</li><br><li>typ pojazdu: '.$info7.'</li><br><li>nr ser. pojazdu: '.$info8.'</li><br><li>przebieg / czas pracy: '.$info9.'</li><br><li>kod błędu: '.$info10.'</li></td>
+                        <td><li>Data zakupu maszyny: <br>'.$info1.'</li><br><li>właściciel / firma: '.$info2.'</li><br><li>data wygaśnięcia gwarancji: <br>'.$info3.'</li><br><li>numer gwarancji: '.$info4.'</li><br><li>lokalizacja: '.$info5.'</li><br><li>nr tel.: '.$info6.'</li><br><li>typ pojazdu: '.$info7.'</li><br><li>nr ser. pojazdu: '.$info8.'</li><br><li>przebieg / czas pracy: '.$info9.'</li><br><li>kod błędu: '.$info10.'</li></td>
                         <td>'.$field5name.'</td> 
                         <td>'.$field6name.'</td> 
                         <td>.<button type="submit">Zmień status lub odpowiedz</button></td> 
