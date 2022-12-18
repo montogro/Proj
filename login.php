@@ -26,8 +26,8 @@ if(isset($_POST['login']) && isset($_POST['password']) && (($radio=="pracownik")
         header("Location: index.php?error=Wymagane jest zaznaczenie pola wyboru - zaznacz jędną z opcji");
         exit();
     }
-    else{ #tu potem mogę rozbić na pracowników i userów
-        if ($radio=="klient"){ #user
+    else{
+        if ($radio=="klient"){ #klient
             $sql = "SELECT * FROM users WHERE login='$login' AND password='$pass'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) === 1){
