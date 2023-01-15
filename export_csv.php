@@ -4,34 +4,34 @@ session_start();
     include "db_conn.php";
     if(isset($_SESSION['id_users']) && isset($_SESSION['login'])){
  
-// Fetch records from database 
+// Wydobycie rekordów z bazy danych
 $sql = "SELECT * FROM users WHERE ID_users LIKE '".$_SESSION['id_users']."';"; 
 $result = mysqli_query($conn, $sql);
  
     $delimiter = ","; 
-    $filename = "members-data_" . date('Y-m-d') . ".csv"; 
+    $filename = "dane-klienta_" . date('Y-m-d') . ".csv"; 
      
-    // Create a file pointer 
-    $f = fopen('php://memory', 'w'); 
+    // Utworzenie wskaźnika do pliku
+    $f = fopen('php://memory', 'w');
      
-    // Set column headers 
-    $fields = array('Twoje ID w bazie danych', 'Twój pojazd'); 
+    // Ustawienie nagłówków kolumn
+    $fields = array('Twoje ID w bazie danych', 'Twoj pojazd'); 
     fputcsv($f, $fields, $delimiter); 
      
-    // Output each row of the data, format line as csv and write to file pointer 
+    // Wypisanie każdego wiersza danych, jego formatowanie jako csv oraz dopisanie do wskaźnika pliku
     while($row = $result->fetch_assoc()){ 
-        $lineData = array($row['ID_users'], $row['vehicle']); 
-        fputcsv($f, $lineData, $delimiter); 
+        $lineData = array($row['ID_users'], $row['vehicle']);
+        fputcsv($f, $lineData, $delimiter);
     } 
      
-    // Move back to beginning of file 
+    // Powrót do początku pliku
     fseek($f, 0); 
      
-    // Set headers to download file rather than displayed 
+    // Ustawienie nagłówków do pobrania
     header('Content-Type: text/csv'); 
     header('Content-Disposition: attachment; filename="' . $filename . '";'); 
      
-    //output all remaining data on a file pointer 
+    //Wypisanie pozostałych plików we wskaźniku pliku
     fpassthru($f); 
 
 //header("Location: my_info.php");
